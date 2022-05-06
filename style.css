@@ -17,7 +17,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.713);
+  background-color: #f4f5f9;
   overflow: hidden;
   position: relative;
 }
@@ -62,6 +62,7 @@ body {
   color: royalblue;
   font-weight: 600;
   margin-top: 10px;
+  font-family: "Barlow";
 }
 
 .note-container {
@@ -102,12 +103,9 @@ body {
   color: royalblue;
   font-size: large;
   cursor: pointer;
+  position: relative;
 }
 .menu .menu-items {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 80px;
   color: #203040;
   font-family: "Public Sans";
   font-size: 0.9rem;
@@ -115,18 +113,44 @@ body {
   list-style: none;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 10px 50px;
   background-color: white;
-  padding: 10px;
   border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  padding: 5px 0;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+  transform-origin: bottom right;
+}
+
+.menu:hover .menu-items {
+  transform: scale(1);
 }
 .menu-items i {
   color: royalblue;
-  margin-right: 5px;
+  font-size: 16px;
+  padding-right: 8px;
+}
+.menu .menu-items li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 25px;
+  font-size: 13px;
+  margin-bottom: 2px;
+  padding: 17px 15px;
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 0;
+}
+.menu-items li:hover {
+  background: #f5f5f5;
 }
 
 .modal-container {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(136, 171, 255, 0.3);
+  background-color: rgba(136, 171, 255, 0.5);
   opacity: 0;
   position: fixed;
   top: 0;
@@ -150,10 +174,17 @@ body {
   width: 350px;
 }
 .modal .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: var(--light-blue);
   font-family: "Barlow", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title i {
+  color: #999;
+  font-size: 1.3rem;
 }
 .form-fields {
   display: flex;
