@@ -92,6 +92,10 @@ function showMenu(elem) {
 
 //delete note
 function deleteNote(noteId) {
+  //confirm delete
+  let confirmDel = confirm("Are you sure you Want to delete?");
+  if (!confirmDel) return;
+
   notes.splice(noteId, 1);
 
   //update the collection in local storage
